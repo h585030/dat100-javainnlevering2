@@ -1,12 +1,20 @@
 package no.hvl.dat100.lab5.tabeller;
 
+import static java.lang.Integer.*;
+import static java.lang.System.*;
+import static javax.swing.JOptionPane.*;
+
 public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
 
 		// TODO
-		throw new UnsupportedOperationException("skrivUt ikke implementert");
+		for (int i=0; i<tabell.length; i++) {
+			String helTall = showInputDialog(
+					"Velg tall nr." + i + ": ");
+			tabell[i] = parseInt (helTall);
+		}
 
 	}
 
@@ -14,8 +22,10 @@ public class Tabeller {
 	public static String tilStreng(int[] tabell) {
 
 		// TODO
-		throw new UnsupportedOperationException("tilStreng ikke implementert");
-		
+		String innholdet = " ";
+		for (int i=0; i<tabell.length; i++)
+			innholdet += i + "   ";
+		return innholdet;
 	}
 
 	// c)
